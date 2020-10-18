@@ -35,21 +35,6 @@ With those steps completed, stop your webserver.
 sudo service apache2 stop
 ----
 
-=== Backup Your Existing Installation
-
-First, xref:maintenance/backup.adoc[backup] the following items:
-
-.  The complete ownCloud directory
-.  The ownCloud server database
-
-[source,console]
-----
-# This example assumes Ubuntu Linux and MariaDB
-# Rename owncloud directory
-mv /var/www/owncloud /var/www/owncloud-old-version-number
-# Backup the Database
-mysqldump -u<username> -p<password> <databasename> > <ownCloud-Version-Dump.sql>
-----
 
 In clustered environment please check that all nodes are in maintenance mode.
 
@@ -74,6 +59,23 @@ or not listed in xref:installation/apps_supported.adoc[Supported Apps in ownClou
 
 . Disable via Browser +
 Goto menu:Settings[Admin > Apps] and disable all third-party apps
+
+
+=== Backup Your Existing Installation
+
+First, xref:maintenance/backup.adoc[backup] the following items:
+
+.  The complete ownCloud directory
+.  The ownCloud server database
+
+[source,console]
+----
+# This example assumes Ubuntu Linux and MariaDB
+# Rename owncloud directory
+mv /var/www/owncloud /var/www/owncloud-old-version-number
+# Backup the Database
+mysqldump -u<username> -p<password> <databasename> > <ownCloud-Version-Dump.sql>
+----
 
 === Download the Latest Installation
 
